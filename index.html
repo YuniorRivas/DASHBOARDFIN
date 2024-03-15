@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media USA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="title-background w-full flex justify-center items-center">
+  <div class="container p-4">
+      <h1 class="main-title">The 10 Most Used Social Media Platforms in the U.S.</h1>
+      <h2 class="sub-title">320.6 million people in the U.S. use social media in 2024!</h2>
+      <h2 class="byline text-center text-md italic"><a href="https://www.pewresearch.org/internet/2024/01/31/americans-social-media-use/" target="_blank">Data from Pew Research Center</a></h2>
+    </div>
+</div>
+<div class="container p-4">
+    <div class="relative inline-block text-left" id="filterContainer">
+      <button id="filterBtn" class="px-4 py-2 bg-blue-600 text-white rounded-lg flex items-center justify-between">
+        Filters <span class="ml-2">▼</span>
+      </button>
+      <div id="filterDropdown" class="hidden absolute z-10 mt-1 w-auto min-w-max bg-white rounded-md shadow-lg">
+        <div class="py-1 flex space-x-4 px-4 bg-white">
+          <!-- Primary Function Filter -->
+          <div>
+            <p class="font-bold text-black bg-white">Primary Function</p>
+            <div class="flex flex-col bg-white">
+              <label><input type="checkbox" name="function" value="networking"> Social Networking</label>
+              <label><input type="checkbox" name="function" value="content"> Content Distribution</label>
+              <label><input type="checkbox" name="function" value="messaging"> Instant Messaging</label>
+              <label><input type="checkbox" name="function" value="discussion"> Public Discussion</label>
+            </div>
+          </div>
+          <!-- Content Type Filter -->
+          <div>
+            <p class="font-bold text-black bg-white">Content Type</p>
+            <div class="flex flex-col bg-white">
+              <label><input type="checkbox" name="content" value="text"> Text-Based</label>
+              <label><input type="checkbox" name="content" value="image"> Image-Based</label>
+              <label><input type="checkbox" name="content" value="video"> Video-Based</label>
+              <label><input type="checkbox" name="content" value="multimedia"> Multimedia</label>
+            </div>
+          </div>
+          <!-- Target Audience Filter -->
+          <div>
+            <p class="font-bold text-black bg-white">Target Audience</p>
+            <div class="flex flex-col bg-white">
+              <label><input type="checkbox" name="audience" value="broad"> Broad Appeal</label>
+              <label><input type="checkbox" name="audience" value="youth"> Youth Centric</label>
+              <label><input type="checkbox" name="audience" value="professional"> Professionals</label>
+              <label><input type="checkbox" name="audience" value="special"> Special Interest</label>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 flex justify-end bg-white rounded-b-md">
+          <button id="resetFilters" class="px-4 py-2 text-white bg-gray-700 hover:bg-gray-800 rounded-md mr-2">Reset</button>
+          <button id="applyFilters" class="px-4 py-2 text-white bg-gray-700 hover:bg-gray-800 rounded-md">Apply Filters</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Placeholder for the content to be filtered -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+
+<div class="card bg-white p-4 rounded-xl shadow-lg card-youtube" id="card1" data-category="video" data-functionality="content" data-audience="broad">
+    <div class="flex flex-wrap md:flex-nowrap">
+        <!-- Platform name and logo -->
+        <div class="flex flex-col items-center mb-4 md:w-1/3">
+            <h2 class="text-3xl font-bold mb-2">YouTube</h2>
+            <img src="images/YouTube Logo.png" alt="Youtube Logo" class="w-24 h-24 rounded-2xl">
+        </div>
+        <!-- Bullet points -->
+        <div class="flex-1 mb-4 md:mb-0 md:ml-4">
+            <ul class="list-disc pl-5 space-y-2">
+                <li>Owned by Alphabet Inc</li>
+                <li>Founded in 2005</li>
+                <li>YouTube is a video-sharing platform where users can upload, view, share, and comment on ameteur and professional videos.</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Slideshow -->
+    <div class="bg-gray-200 p-10 rounded-xl w-full text-center relative mt-2">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <strong>83% of U.S. adults use Youtube</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>YouTube has high usage rates<br>across all demographics</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>Asian adults use YouTube<br>the most of any ethnic group</strong>
+            </div>
+            <a class="prev cursor-pointer" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next cursor-pointer" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="dot-container flex justify-center mt-2">
+            <span class="dot cursor-pointer" onclick="currentSlide(1)"></span> 
+            <span class="dot cursor-pointer" onclick="currentSlide(2)"></span> 
+            <span class="dot cursor-pointer" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+</div>
+
+<div class="card bg-white p-4 rounded-xl shadow-lg card-facebook" id="card2" data-category="multimedia" data-functionality="networking" data-audience="broad">
+    <div class="flex flex-wrap md:flex-nowrap">
+        <div class="flex flex-col items-center mb-4 md:w-1/3">
+            <h2 class="text-3xl font-bold mb-2">Facebook</h2>
+            <img src="images/Facebook Logo.png" alt="Facebook Logo" class="w-24 h-24 rounded-2xl">
+        </div>
+        <div class="flex-1 mb-4 md:mb-0 md:ml-4">
+            <ul class="list-disc pl-5 space-y-2">
+                <li>Owned by Meta, Inc.</li>
+                <li>Founded in 2004</li>
+                <li>Facebook is a social networking site that allows users to post updates, share photos, and interact with friends and family.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="bg-gray-200 p-10 rounded-xl w-full text-center relative mt-2">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <strong>68% of U.S. adults use Facebook</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>People aged 30-49 use Facebook at<br>much higher rates than other age groups</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>Facebook is significantly more<br>popular with women than men</strong>
+            </div>
+            <a class="prev cursor-pointer" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next cursor-pointer" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="dot-container flex justify-center mt-2">
+            <span class="dot cursor-pointer" onclick="currentSlide(1)"></span> 
+            <span class="dot cursor-pointer" onclick="currentSlide(2)"></span> 
+            <span class="dot cursor-pointer" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+</div>
+<div class="card bg-white p-4 rounded-xl shadow-lg card-instagram" id="card3" data-category="image" data-functionality="content" data-audience="youth">
+    <div class="flex flex-wrap md:flex-nowrap">
+        <div class="flex flex-col items-center mb-4 md:w-1/3">
+            <h2 class="text-3xl font-bold mb-2">Instagram</h2>
+            <img src="images/Instagram Logo.png" alt="Instagram Logo" class="w-24 h-24 rounded-2xl">
+        </div>
+        <div class="flex-1 mb-4 md:mb-0 md:ml-4">
+            <ul class="list-disc pl-5 space-y-2">
+                <li>Owned by Meta, Inc.</li>
+                <li>Founded in 2010</li>
+                <li>Instagram is a photo and video sharing service where users can post content and engage through likes and comments.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="bg-gray-200 p-10 rounded-xl w-full text-center relative mt-2">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <strong>47% of U.S. adults use Instagram</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>Younger age groups are far<br>more likely to use Instagram</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>Usage rates for Instagram increase<br>along with income level</strong>
+            </div>
+            <a class="prev cursor-pointer" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next cursor-pointer" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="dot-container flex justify-center mt-2">
+            <span class="dot cursor-pointer" onclick="currentSlide(1)"></span> 
+            <span class="dot cursor-pointer" onclick="currentSlide(2)"></span> 
+            <span class="dot cursor-pointer" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+</div>
+
+<div class="card bg-white p-4 rounded-xl shadow-lg card-pinterest" id="card4" data-category="image" data-functionality="content" data-audience="special">
+    <div class="flex flex-wrap md:flex-nowrap">
+        <div class="flex flex-col items-center mb-4 md:w-1/3">
+            <h2 class="text-3xl font-bold mb-2">Pinterest</h2>
+            <img src="images/Pinterest Logo.png" alt="Pinterest Logo" class="w-24 h-24 rounded-2xl">
+        </div>
+        <div class="flex-1 mb-4 md:mb-0 md:ml-4">
+            <ul class="list-disc pl-5 space-y-2">
+                <li>Owned by Pinterest, Inc.</li>
+                <li>Founded in 2009</li>
+                <li>Pinterest is a visual discovery engine where users can find and share ideas and inspiration for various interests.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="bg-gray-200 p-10 rounded-xl w-full text-center relative mt-2">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <strong>35% of U.S. adults use Pinterest</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>Women are 2 times more likely<br>to use Pinterest than men</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>Pinterest is more popular among those<br>with "some college" education</strong>
+            </div>
+            <a class="prev cursor-pointer" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next cursor-pointer" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="dot-container flex justify-center mt-2">
+            <span class="dot cursor-pointer" onclick="currentSlide(1)"></span> 
+            <span class="dot cursor-pointer" onclick="currentSlide(2)"></span> 
+            <span class="dot cursor-pointer" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+</div>
+
+<!-- TikTok Card -->
+<div class="card bg-white p-4 rounded-xl shadow-lg card-tiktok" id="card5" data-category="video" data-functionality="content" data-audience="youth">
+    <div class="flex flex-wrap md:flex-nowrap">
+        <div class="flex flex-col items-center mb-4 md:w-1/3">
+            <h2 class="text-3xl font-bold mb-2">TikTok</h2>
+            <img src="images/TikTok Logo.png" alt="TikTok Logo" class="w-24 h-24 rounded-2xl">
+        </div>
+        <div class="flex-1 mb-4 md:mb-0 md:ml-4">
+            <ul class="list-disc pl-5 space-y-2">
+                <li>Owned by ByteDance Ltd.</li>
+                <li>Founded in 2016</li>
+                <li>TikTok is a short-video sharing app where users can create and share videos, often featuring music, dance, or comedic content.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="bg-gray-200 p-10 rounded-xl w-full text-center relative mt-2">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <strong>33% of U.S. adults use TikTok</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>Half of Latino adults use TikTok,<br>the most of any ethnic group</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>People with a college degree are<br>much less likely to use TikTok</strong>
+            </div>
+            <a class="prev cursor-pointer" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next cursor-pointer" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="dot-container flex justify-center mt-2">
+            <span class="dot cursor-pointer" onclick="currentSlide(1)"></span>
+            <span class="dot cursor-pointer" onclick="currentSlide(2)"></span>
+            <span class="dot cursor-pointer" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+</div>
+
+<!-- LinkedIn Card -->
+<div class="card bg-white p-4 rounded-xl shadow-lg card-linkedin" id="card6" data-category="text" data-functionality="networking" data-audience="professional">
+    <div class="flex flex-wrap md:flex-nowrap">
+        <div class="flex flex-col items-center mb-4 md:w-1/3">
+            <h2 class="text-3xl font-bold mb-2">LinkedIn</h2>
+            <img src="images/LinkedIn Logo.png" alt="LinkedIn Logo" class="w-24 h-24 rounded-2xl">
+        </div>
+        <div class="flex-1 mb-4 md:mb-0 md:ml-4">
+            <ul class="list-disc pl-5 space-y-2">
+                <li>Owned by Microsoft</li>
+                <li>Founded in 2002</li>
+                <li>LinkedIn is a professional networking platform where users can connect with colleagues and share industry insights.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="bg-gray-200 p-10 rounded-xl w-full text-center relative mt-2">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <strong>30% of U.S. adults use LinkedIn</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>College graduates are twice as likely<br>to use LinkedIn than non-graduates</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>Adults living in rural areas are<br>much less likely to use LinkedIn</strong>
+            </div>
+            <a class="prev cursor-pointer" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next cursor-pointer" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="dot-container flex justify-center mt-2">
+            <span class="dot cursor-pointer" onclick="currentSlide(1)"></span>
+            <span class="dot cursor-pointer" onclick="currentSlide(2)"></span>
+            <span class="dot cursor-pointer" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+</div>
+
+<!-- WhatsApp Card -->
+<div class="card bg-white p-4 rounded-xl shadow-lg card-whatsapp" id="card7" data-category="text" data-functionality="messaging" data-audience="broad">
+    <div class="flex flex-wrap md:flex-nowrap">
+        <div class="flex flex-col items-center mb-4 md:w-1/3">
+            <h2 class="text-3xl font-bold mb-2">WhatsApp</h2>
+            <img src="images/WhatsApp Logo.png" alt="WhatsApp Logo" class="w-24 h-24 rounded-2xl">
+        </div>
+        <div class="flex-1 mb-4 md:mb-0 md:ml-4">
+            <ul class="list-disc pl-5 space-y-2">
+                <li>Owned by Meta, Inc.</li>
+                <li>Founded in 2009</li>
+                <li>WhatsApp is a messaging app that allows users to send ecrypted messages and perform voice and video calls.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="bg-gray-200 p-10 rounded-xl w-full text-center relative mt-2">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <strong>29% of U.S. adults use WhatsApp</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>Asian and Latino adults use<br>WhatsApp at the highest rates</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>Adults who identify as Democrats<br>are more likely to use WhatsApp</strong>
+            </div>
+            <a class="prev cursor-pointer" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next cursor-pointer" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="dot-container flex justify-center mt-2">
+            <span class="dot cursor-pointer" onclick="currentSlide(1)"></span>
+            <span class="dot cursor-pointer" onclick="currentSlide(2)"></span>
+            <span class="dot cursor-pointer" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+</div>
+
+<!-- Snapchat Card -->
+<div class="card bg-white p-4 rounded-xl shadow-lg card-snapchat" id="card8" data-category="image" data-functionality="messaging" data-audience="youth">
+    <div class="flex flex-wrap md:flex-nowrap">
+        <div class="flex flex-col items-center mb-4 md:w-1/3">
+            <h2 class="text-3xl font-bold mb-2">Snapchat</h2>
+            <img src="images/Snapchat Logo.png" alt="Snapchat Logo" class="w-24 h-24 rounded-2xl">
+        </div>
+        <div class="flex-1 mb-4 md:mb-0 md:ml-4">
+            <ul class="list-disc pl-5 space-y-2">
+                <li>Owned by Snap Inc.</li>
+                <li>Founded in 2011</li>
+                <li>Snapchat is a image-oriented messaging app known for its disappearing messages and unique augmented reality filters.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="bg-gray-200 p-10 rounded-xl w-full text-center relative mt-2">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <strong>27% of U.S. adults use Snapchat</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>Snapchat is strongly preferred<br>among adults aged 18-29</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>Latino adults use Snapchat at much<br>higher rates than other ethnic groups</strong>
+            </div>
+            <a class="prev cursor-pointer" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next cursor-pointer" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="dot-container flex justify-center mt-2">
+            <span class="dot cursor-pointer" onclick="currentSlide(1)"></span>
+            <span class="dot cursor-pointer" onclick="currentSlide(2)"></span>
+            <span class="dot cursor-pointer" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+</div>
+
+<!-- X (Formerly Twitter) Card -->
+<div class="card bg-white p-4 rounded-xl shadow-lg card-x" id="card9" data-category="multimedia" data-functionality="discussion" data-audience="professional">
+    <div class="flex flex-wrap md:flex-nowrap">
+        <div class="flex flex-col items-center mb-4 md:w-1/3">
+            <h2 class="text-3xl font-bold mb-2">X (Twitter)</h2>
+            <img src="images/X Logo.png" alt="X Logo" class="w-24 h-24 rounded-2xl">
+        </div>
+        <div class="flex-1 mb-4 md:mb-0 md:ml-4">
+            <ul class="list-disc pl-5 space-y-2">
+                <li>Owned by X Corp.</li>
+                <li>Founded in 2006</li>
+                <li>X (Formerly Twitter) is a microblogging platform where user can share brief updates, news, and opinions known as "tweets."</li>
+            </ul>
+        </div>
+    </div>
+    <div class="bg-gray-200 p-10 rounded-xl w-full text-center relative mt-2">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <strong>22% of U.S. adults use X (Twitter)</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>Asian adults have the highest usage of<br>X (Twitter) of all ethnic groups</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>Suburban adults are twice as likely<br>to use X (Twitter) than rural adults</strong>
+            </div>
+            <a class="prev cursor-pointer" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next cursor-pointer" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="dot-container flex justify-center mt-2">
+            <span class="dot cursor-pointer" onclick="currentSlide(1)"></span>
+            <span class="dot cursor-pointer" onclick="currentSlide(2)"></span>
+            <span class="dot cursor-pointer" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+</div>
+
+<!-- Reddit Card -->
+<div class="card bg-white p-4 rounded-xl shadow-lg card-reddit" id="card10" data-category="text" data-functionality="discussion" data-audience="special">
+    <div class="flex flex-wrap md:flex-nowrap">
+        <div class="flex flex-col items-center mb-4 md:w-1/3">
+            <h2 class="text-3xl font-bold mb-2">Reddit</h2>
+            <img src="images/Reddit Logo.png" alt="Reddit Logo" class="w-24 h-24 rounded-2xl">
+        </div>
+        <div class="flex-1 mb-4 md:mb-0 md:ml-4">
+            <ul class="list-disc pl-5 space-y-2">
+                <li>Owned by Reddit, Inc.</li>
+                <li>Founded in 2005</li>
+                <li>Reddit is an interest-specific network where users can submit content, such as text posts or direct links, and engage in discussions.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="bg-gray-200 p-10 rounded-xl w-full text-center relative mt-2">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <strong>22% of U.S. adults use Reddit</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>Men use Reddit at much<br>higher rates than women</strong>
+            </div>
+            <div class="mySlides fade">
+                <strong>Reddit is the platform least<br>used by adults aged 65+</strong>
+            </div>
+            <a class="prev cursor-pointer" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next cursor-pointer" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="dot-container flex justify-center mt-2">
+            <span class="dot cursor-pointer" onclick="currentSlide(1)"></span>
+            <span class="dot cursor-pointer" onclick="currentSlide(2)"></span>
+            <span class="dot cursor-pointer" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="footer">© 2024 Yunior Rivas Garcia</div>
+
+<script src="script.js"></script>
+</body>
+</html>
