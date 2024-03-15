@@ -55,7 +55,7 @@ function applyFilters() {
         const filters = {};
         document.querySelectorAll('#filterDropdown input[type="checkbox"]:checked').forEach(checkbox => {
             filters[checkbox.name] = checkbox.value;
-        });x
+        });
         return filters;
     }
 
@@ -96,7 +96,7 @@ function applyFilters() {
 
 window.addEventListener('scroll', function() {
 var scrolledHeight= window.pageYOffset;
-document.body.style.backgroundPositionY = -(scrolledHeight * 5) + 'px';
+document.body.style.backgroundPositionY = -(scrolledHeight * 2) + 'px';
 });
 
 
